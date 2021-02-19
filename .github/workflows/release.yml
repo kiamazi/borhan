@@ -30,7 +30,7 @@ jobs:
       with:
         store_login: ${{ secrets.SNAP_STORE_LOGIN }}
         snap: ${{ steps.publish.outputs.snap }}
-        release: edge
+        release: stable
 
   publish_on_mac:
     runs-on: macos-latest

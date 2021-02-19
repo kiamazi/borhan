@@ -25,7 +25,8 @@ jobs:
     - name: Upload snap artifact
       uses: actions/upload-artifact@v2
       with:
-        path: out/make/*.snap
+        path: out/make/
+          
 
   publish_on_mac:
     runs-on: macos-latest

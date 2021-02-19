@@ -3,7 +3,7 @@ on: [push, pull_request]
 
 jobs:
   build_on_linux:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@master
@@ -12,6 +12,8 @@ jobs:
     - name: install dependencies
       run: npm install
     - name: build
+      env:
+        SNAPCRAFT_BUILD_ENVIRONMENT: host
       run: npm run make
 
   build_on_mac:

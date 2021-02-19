@@ -23,10 +23,10 @@ jobs:
         SNAPCRAFT_BUILD_ENVIRONMENT: host
       run: npm run publish
     - uses: snapcore/action-publish@v1
-    with:
-      store_login: ${{ secrets.SNAP_STORE_LOGIN }}
-      snap: ${{ steps.publish_on_linux.outputs.snap }}
-      release: stable
+      with:
+        store_login: ${{ secrets.SNAP_STORE_LOGIN }}
+        snap: ${{ steps.publish_on_linux.outputs.snap }}
+        release: stable
     - name: Upload snap artifact
       uses: actions/upload-artifact@v2
       with:

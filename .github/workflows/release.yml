@@ -20,6 +20,7 @@ jobs:
     - name: publish
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SNAPCRAFT_BUILD_ENVIRONMENT: host
       run: npm run publish
 
   publish_on_mac:

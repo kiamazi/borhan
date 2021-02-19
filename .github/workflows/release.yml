@@ -22,6 +22,10 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SNAPCRAFT_BUILD_ENVIRONMENT: host
       run: npm run publish
+    - name: Upload snap artifact
+      uses: actions/upload-artifact@v2
+      with:
+        path: out/make/*.snap
 
   publish_on_mac:
     runs-on: macos-latest

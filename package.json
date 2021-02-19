@@ -3,7 +3,7 @@
   "productName": "borhan",
   "version": "1.0.0",
   "description": "quran text and translates",
-  "main": "dist/index.js",
+    "main": "dist/index.js",
   "scripts": {
     "start": "tsc && electron-forge start",
     "package": "electron-forge package",
@@ -11,13 +11,25 @@
     "publish": "electron-forge publish",
     "lint": "eslint --ext .ts ."
   },
-  "keywords": ["quran"],
+  "keywords": [
+    "quran"
+  ],
   "author": {
     "name": "kiavash",
     "email": "kiavash@gmail.com"
   },
-  "repository": "https://github.com/kiamazi/borhan",
   "license": "MIT",
+  "bugs": {
+		"url": "https://github.com/kiamazi/borhan/issues"
+	},
+	"homepage": "https://github.com/kiamazi/borhan#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/kiamazi/borhan.git"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
   "config": {
     "forge": {
       "packagerConfig": {
@@ -67,6 +79,10 @@
         {
           "name": "@davidwinter/electron-forge-maker-snap",
           "config": {
+            "applicationName": "borhan",
+            "confinement": "strict",
+            "grade": "stable",
+            "summary": "Quran text and translates",
             "categories": [
               "Office"
             ]
@@ -98,7 +114,6 @@
     "@typescript-eslint/eslint-plugin": "^2.18.0",
     "@typescript-eslint/parser": "^2.18.0",
     "electron": "11.2.3",
-    "electron-installer-snap": "^5.1.0",
     "eslint": "^7.6.0",
     "eslint-plugin-import": "^2.20.0",
     "typescript": "^4.0.2"

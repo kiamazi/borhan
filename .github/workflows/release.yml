@@ -15,6 +15,8 @@ jobs:
         node-version: 14
     - name: install dependencies
       run: npm install
+    - name: Install snapcraft
+      run: sudo snap install snapcraft --classic
     - name: publish
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

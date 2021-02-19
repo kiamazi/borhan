@@ -1,0 +1,110 @@
+{
+  "name": "borhan",
+  "productName": "borhan",
+  "version": "1.0.0",
+  "description": "quran text and translates",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "tsc && electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "eslint --ext .ts ."
+  },
+  "keywords": ["quran"],
+  "author": {
+    "name": "kiavash",
+    "email": "kiavash@gmail.com"
+  },
+  "repository": "https://github.com/kiamazi/borhan",
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "icon": "assets/icons/icon"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "Borhan"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "config": {
+            "name": "Borhan"
+          },
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-dmg",
+          "config": {
+            "name": "Borhan",
+            "format": "ULFO"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {
+            "name": "Borhan",
+            "options": {
+              "icon": "assets/icons/icon.png"
+            }
+          }
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {
+            "name": "Borhan",
+            "options": {
+              "icon": "assets/icons/icon.png"
+            }
+          }
+        },
+        {
+          "name": "@davidwinter/electron-forge-maker-snap",
+          "config": {
+            "categories": [
+              "Office"
+            ]
+          }
+        }
+      ],
+      "publishers": [
+        {
+          "name": "@electron-forge/publisher-github",
+          "config": {
+            "repository": {
+              "owner": "kiamazi",
+              "name": "Borhan"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "devDependencies": {
+    "@davidwinter/electron-forge-maker-snap": "^0.7.1",
+    "@electron-forge/cli": "^6.0.0-beta.54",
+    "@electron-forge/maker-deb": "^6.0.0-beta.54",
+    "@electron-forge/maker-dmg": "^6.0.0-beta.54",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.54",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
+    "@electron-forge/maker-zip": "^6.0.0-beta.54",
+    "@electron-forge/publisher-github": "^6.0.0-beta.54",
+    "@typescript-eslint/eslint-plugin": "^2.18.0",
+    "@typescript-eslint/parser": "^2.18.0",
+    "electron": "11.2.3",
+    "electron-installer-snap": "^5.1.0",
+    "eslint": "^7.6.0",
+    "eslint-plugin-import": "^2.20.0",
+    "typescript": "^4.0.2"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "electron-store": "^7.0.2"
+  }
+}

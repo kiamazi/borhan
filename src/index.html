@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello World!</title>
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
+  https://mildrenben.github.io/surface/docs/grid.html
+ -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+  <link rel="stylesheet" href="./index.css">
+  <!-- <link rel="stylesheet" href="./static/surface_styles.css"> -->
+  <link id="pagestyle" rel="stylesheet" type="text/css" href="./static/lightstyle.css">
+</head>
+
+<body>
+  <div id='mainindow' class='grid-container'>
+
+    <input type="checkbox" id="menu-button" checked>
+    <label for="menu-button">MENU</label>
+
+    <aside class="side">
+      <div class="logo">
+        <img src='./static/images/borhan.png'>
+        <h1>Borhan</h1>
+      </div>
+
+      <div class="checkbox">
+        <input type="checkbox" id="changestyle">
+        <label for="changestyle" id="changestyletext" class="text">dark theme</label>
+      </div>
+      <i data-feather='toggle-left'></i>
+
+      <nav class="nav">
+        <section id="browse"></section>
+        <section id="text"></section>
+        <section id="translate"></section>
+        <section id='about'>
+          <button id="helpBtn">Help</button>
+          <button id="aboutBtn">About</button>
+        </section>
+      </nav>
+
+    </aside>
+
+    <main class="main">
+    </main>
+
+    <div class="pagination" id='pagination'></div>
+
+    <!-- Trigger/Open The Modal (help) -->
+    <div id="helpModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id='helpModalClose'>&times;</span>
+        <h1>keyboard shourtcuts</h1>
+        <p>left: next page</p>
+        <p>right: previous page</p>
+        <p>up: next aya</p>
+        <p>down: previous page</p>
+      </div>
+    </div>
+
+    <!-- Trigger/Open The Modal (About) -->
+    <div id="aboutModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id='aboutModalClose'>&times;</span>
+        <h1>Borhan</h1>
+        <p class="rtl">تا با غم عشق تو مرا کار افتاد...</p>
+        <hr>
+        <p>Developed with love by <a href="https://kiavash.one">kiavash</a></p>
+        <br>
+        <p>text and translate: <a href="tanzil.ir">Tanzil</a></p>
+        <br>
+        <p>fonts used in the app:
+          <br>
+          <a href="https://github.com/font-store/NoonFont">Noon</a>: Saleh Souzanchi
+          <br>
+          <a href="https://github.com/rastikerdar/vazir-font/">Vazir</a>: Saber Rastikerdar
+          <br>
+          <a href="https://github.com/rastikerdar/sahel-font/">Sahel</a>: Saber Rastikerdar
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- You can also require other files to run in this process -->
+  <script src="../dist/renderer.js"></script>
+</body>
+
+</html>

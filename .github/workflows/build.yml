@@ -1,8 +1,5 @@
 name: Build
-on:
-  push:
-    tags:
-      - 'v*'
+on: [push, pull_request]
 
 jobs:
   build_on_linux:
@@ -12,13 +9,9 @@ jobs:
     - uses: actions/setup-node@master
       with:
         node-version: 14
-    - name: Install snapcraft
-      run: sudo snap install snapcraft --classic
     - name: install dependencies
       run: npm install
     - name: build
-      env:
-        SNAPCRAFT_BUILD_ENVIRONMENT: host
       run: npm run make
 
   build_on_mac:
@@ -31,6 +24,8 @@ jobs:
     - name: install dependencies
       run: npm install
     - name: build
+      env:
+        SNAPCRAFT_BUILD_ENVIRONMENT: host
       run: npm run make
 
   build_on_win:

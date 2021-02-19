@@ -1,0 +1,42 @@
+name: borhan
+title: borhan
+version: 1.0.0
+icon: ./borhan.png
+summary: Quran text and translates
+description: quran text and translates
+base: core18
+confinement: strict
+grade: stable
+apps:
+  borhan:
+    command: borhan/borhan --no-sandbox
+    extensions:
+      - gnome-3-34
+    plugs:
+      - alsa
+      - browser-support
+      - desktop
+      - desktop-legacy
+      - gsettings
+      - home
+      - network
+      - opengl
+      - pulseaudio
+      - unity7
+      - x11
+    environment:
+      TMPDIR: $XDG_RUNTIME_DIR
+parts:
+  app:
+    plugin: nil
+    source: ./app
+    override-build: cp -rv . $SNAPCRAFT_PART_INSTALL/borhan
+    stage-packages:
+      - libnss3
+      - libnspr4
+      - libasound2
+      - libpcre3
+      - libpulse0
+      - libxss1
+      - libxtst6
+license: MIT

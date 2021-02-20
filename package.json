@@ -98,12 +98,6 @@
               "name": "Borhan"
             }
           }
-        },
-        {
-          "name": "@electron-forge/publisher-snapcraft",
-          "config": {
-            "release": "borhan"
-          }
         }
       ]
     }

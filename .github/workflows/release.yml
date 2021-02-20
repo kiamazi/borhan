@@ -7,9 +7,9 @@ on:
 jobs:
 
   publish_on_linux:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
-    - uses: actions/checkout@v2       
+    - uses: actions/checkout@v2
     - uses: actions/setup-node@master
       with:
         node-version: 14
@@ -23,12 +23,12 @@ jobs:
         SNAPCRAFT_BUILD_ENVIRONMENT: host
       run: npm run publish
     - name: print
-      run: ls out/make/*.snap
+      run: find out/ -type f -name '*.snap'
     - name: artifact
       uses: actions/upload-artifact@v2
       with:
         name: snap
-        path: out/make/*.snap
+        path: out/make/**/*.snap
     - name: Install Snapcraft
       uses: samuelmeuli/action-snapcraft@v1
       with:
@@ -36,7 +36,7 @@ jobs:
         skip_install: true
     - name: Use SnapCraft
       run: |
-        value=`ls out/make/*.snap`
+        value=`find out/ -type f -name '*.snap'`
         snapcraft upload --release=stable $value
 
   publish_on_mac:
@@ -56,7 +56,7 @@ jobs:
   publish_on_win:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v2       
+    - uses: actions/checkout@v2
     - uses: actions/setup-node@master
       with:
         node-version: 14

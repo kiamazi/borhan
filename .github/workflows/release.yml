@@ -22,17 +22,22 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SNAPCRAFT_BUILD_ENVIRONMENT: host
       run: npm run publish
+    - name: print
+      run: ls out/make/*.snap
     - name: artifact
       uses: actions/upload-artifact@v2
       with:
         name: snap
         path: out/make/*.snap
-    - uses: snapcore/action-publish@v1
-      value: `ls out/make/*.snap`
+    - name: Install Snapcraft
+      uses: samuelmeuli/action-snapcraft@v1
       with:
-        store_login: ${{ secrets.SNAP_STORE_LOGIN }}
-        snap: $value
-        release: stable
+        snapcraft_token: ${{ secrets.SNAP_STORE_LOGIN }}
+        skip_install: true
+    - name: Use SnapCraft
+      run: |
+        value=`ls out/make/*.snap`
+        snapcraft upload --release=stable $value
 
   publish_on_mac:
     runs-on: macos-latest

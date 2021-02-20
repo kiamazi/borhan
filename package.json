@@ -116,10 +116,10 @@
     "electron": "11.2.3",
     "eslint": "^7.6.0",
     "eslint-plugin-import": "^2.20.0",
-    "typescript": "^4.0.2"
+    "typescript": "^4.0.2",
+    "electron-store": "^7.0.2"
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0",
-    "electron-store": "^7.0.2"
   }
 }

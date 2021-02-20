@@ -28,12 +28,11 @@ jobs:
         name: snap
         path: out/make/*.snap
     - uses: snapcore/action-publish@v1
+      value: `ls out/make/*.snap`
       with:
         store_login: ${{ secrets.SNAP_STORE_LOGIN }}
-        snap: env.SNAP_VALUE
+        snap: $value
         release: stable
-        env:
-          SNAP_VALUE: `ls out/make/*.snap`
 
   publish_on_mac:
     runs-on: macos-latest

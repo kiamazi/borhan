@@ -1,9 +1,9 @@
 {
   "name": "borhan",
   "productName": "borhan",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "quran text and translates",
-  "main": "dist/index.js",
+    "main": "dist/index.js",
   "scripts": {
     "start": "tsc && electron-forge start",
     "package": "electron-forge package",
@@ -20,16 +20,16 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kiamazi/borhan/issues"
-  },
-  "homepage": "https://github.com/kiamazi/borhan#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kiamazi/borhan.git"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
+		"url": "https://github.com/kiamazi/borhan/issues"
+	},
+	"homepage": "https://github.com/kiamazi/borhan#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/kiamazi/borhan.git"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
   "config": {
     "forge": {
       "packagerConfig": {
@@ -77,12 +77,12 @@
           }
         },
         {
-          "name": "@electron-forge/maker-snap",
+          "name": "@davidwinter/electron-forge-maker-snap",
           "config": {
-            "features": {},
-            "summary": "Quran text and translates",
-            "grade": "stable",
+            "applicationName": "borhan",
             "confinement": "strict",
+            "grade": "stable",
+            "summary": "Quran text and translates",
             "categories": [
               "Office"
             ]
@@ -103,21 +103,21 @@
     }
   },
   "devDependencies": {
+    "@davidwinter/electron-forge-maker-snap": "^0.7.1",
     "@electron-forge/cli": "^6.0.0-beta.54",
     "@electron-forge/maker-deb": "^6.0.0-beta.54",
     "@electron-forge/maker-dmg": "^6.0.0-beta.54",
     "@electron-forge/maker-rpm": "^6.0.0-beta.54",
-    "@electron-forge/maker-snap": "^6.0.0-beta.54",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
     "@electron-forge/maker-zip": "^6.0.0-beta.54",
     "@electron-forge/publisher-github": "^6.0.0-beta.54",
     "@typescript-eslint/eslint-plugin": "^2.18.0",
     "@typescript-eslint/parser": "^2.18.0",
     "electron": "11.2.3",
-    "electron-store": "^7.0.2",
     "eslint": "^7.6.0",
     "eslint-plugin-import": "^2.20.0",
-    "typescript": "^4.0.2"
+    "typescript": "^4.0.2",
+    "electron-store": "^7.0.2"
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0"

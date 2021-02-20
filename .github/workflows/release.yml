@@ -23,12 +23,12 @@ jobs:
         SNAPCRAFT_BUILD_ENVIRONMENT: host
       run: npm run publish
     - name: print
-      run: find out/ -type f -name '*.snap'
+      run: ls out/make/*.snap
     - name: artifact
       uses: actions/upload-artifact@v2
       with:
         name: snap
-        path: out/make/**/*.snap
+        path: out/make/*.snap
     - name: Install Snapcraft
       uses: samuelmeuli/action-snapcraft@v1
       with:
@@ -36,7 +36,7 @@ jobs:
         skip_install: true
     - name: Use SnapCraft
       run: |
-        value=`find out/ -type f -name '*.snap'`
+        value=`ls out/make/*.snap`
         snapcraft upload --release=stable $value
 
   publish_on_mac:

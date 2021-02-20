@@ -22,10 +22,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SNAPCRAFT_BUILD_ENVIRONMENT: host
       run: npm run publish
-    - name: print
-      run: |
-        value=`ls out/make/*.snap`
-        echo $value
+      env:
+        SNAP_VALUE: `ls out/make/*.snap`
     - name: artifact
       uses: actions/upload-artifact@v2
       with:
@@ -34,7 +32,7 @@ jobs:
     - uses: snapcore/action-publish@v1
       with:
         store_login: ${{ secrets.SNAP_STORE_LOGIN }}
-        snap: ${{ steps.print.outputs.snap }}
+        snap: env.SNAP_VALUE
         release: stable
 
   publish_on_mac:

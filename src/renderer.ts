@@ -12,7 +12,7 @@ function swapStyleSheet(sheet: string): void {
 const changeStyle = document.getElementById('changestyle') as HTMLInputElement
 changeStyle.addEventListener('change', () => {
   const sheet: string =
-    changeStyle.checked ? "./static/darkstyle.css" : "./static/lightstyle.css";
+    changeStyle.checked ? "../assets/static/darkstyle.css" : "../assets/static/lightstyle.css";
   swapStyleSheet(sheet)
   const changeStyleText = document.getElementById('changestyletext')
   changeStyleText.innerText =

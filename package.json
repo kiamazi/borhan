@@ -3,12 +3,12 @@
   "productName": "borhan",
   "version": "1.0.0",
   "description": "quran text and translates",
-    "main": "dist/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "start": "tsc && electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make",
-    "publish": "electron-forge publish",
+    "package": "tsc && electron-forge package",
+    "make": "tsc && electron-forge make",
+    "publish": "tsc && electron-forge publish",
     "lint": "eslint --ext .ts ."
   },
   "keywords": [
@@ -20,16 +20,16 @@
   },
   "license": "MIT",
   "bugs": {
-		"url": "https://github.com/kiamazi/borhan/issues"
-	},
-	"homepage": "https://github.com/kiamazi/borhan#readme",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/kiamazi/borhan.git"
-	},
-	"publishConfig": {
-		"access": "public"
-	},
+    "url": "https://github.com/kiamazi/borhan/issues"
+  },
+  "homepage": "https://github.com/kiamazi/borhan#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiamazi/borhan.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "config": {
     "forge": {
       "packagerConfig": {
@@ -95,7 +95,7 @@
           "config": {
             "repository": {
               "owner": "kiamazi",
-              "name": "Borhan"
+              "name": "borhan"
             }
           }
         }

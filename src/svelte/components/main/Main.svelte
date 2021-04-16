@@ -17,9 +17,7 @@ import { afterUpdate } from 'svelte';
 
 $: {
     document.documentElement.style.setProperty('--text-size', $textFontSize + 'px');
-    document.documentElement.style.setProperty('--text-line-height', $textFontSize * 1.8 + 'px');
     document.documentElement.style.setProperty('--translate-size', $translateFontSize + 'px');
-    document.documentElement.style.setProperty('--translate-line-height', $translateFontSize * 2 + 'px');
 }
 $: textContent = contentController($textSelected, $translateSelected, $pageNumber, $ayaNumberInQuran);
 
@@ -123,7 +121,7 @@ section {
 .aya_text {
     /* font-size: 28px; */
     font-size: var(--text-size);
-    line-height: var(--text-line-height);
+    line-height: 1.8em;
     padding-top: 5px;
     padding-right: 30px;
     padding-left: 30px;
@@ -136,22 +134,20 @@ section {
 }
 .aya_translate {
     font-family: Vazir;
-    /* font-size: 14pt; */
     font-size: var(--translate-size);
-    line-height: var(--translate-line-height);
     padding-right: 30px;
     padding-left: 30px;
 }
 .rtl {
     direction: rtl;
     text-align: right;
-    line-height: 2.5rem;
+    line-height: 2em;
 }
 .ltr {
     font-family: Sahel;
     direction: ltr;
     text-align: left;
-    line-height: 1.8rem;
+    line-height: 1.7em;
 }
 .selected {
     /* background-color: #f0f0f0; */

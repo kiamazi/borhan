@@ -1,0 +1,13 @@
+body {
+    background: #333;
+}
+main {
+    color: #EEE;
+}
+main .selected {
+    border-bottom: 5px double #9e9e9e !important;
+}
+#pagination, #pagination * {
+    color: #AAA;
+}
+/* #pagination button {border-color: #AAA;} */

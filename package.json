@@ -1,125 +1,111 @@
 {
-  "name": "borhan",
-  "productName": "borhan",
-  "version": "1.0.0",
-  "description": "quran text and translates",
-  "main": "dist/index.js",
-  "scripts": {
-    "start": "tsc && electron-forge start",
-    "package": "tsc && electron-forge package",
-    "make": "tsc && electron-forge make",
-    "publish": "tsc && electron-forge publish",
-    "lint": "eslint --ext .ts ."
-  },
-  "keywords": [
-    "quran"
-  ],
-  "author": {
-    "name": "kiavash",
-    "email": "kiavash@gmail.com"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/kiamazi/borhan/issues"
-  },
-  "homepage": "https://github.com/kiamazi/borhan#readme",
+  "name": "Borhan",
+  "description": "Quran text and translates",
+  "version": "1.4.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kiamazi/borhan.git"
   },
-  "publishConfig": {
-    "access": "public"
+  "author": {
+    "name": "kiavash",
+    "email": "kiavash@cpan.org",
+    "url": "https://github.com/kiamazi"
   },
-  "config": {
-    "forge": {
-      "packagerConfig": {
-        "icon": "assets/icons/icon"
-      },
-      "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "Borhan"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-zip",
-          "config": {
-            "name": "Borhan"
-          },
-          "platforms": [
-            "darwin"
-          ]
-        },
-        {
-          "name": "@electron-forge/maker-dmg",
-          "config": {
-            "name": "Borhan",
-            "format": "ULFO"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-deb",
-          "config": {
-            "name": "Borhan",
-            "options": {
-              "icon": "assets/icons/icon.png"
-            }
-          }
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
-          "config": {
-            "name": "Borhan",
-            "options": {
-              "icon": "assets/icons/icon.png"
-            }
-          }
-        },
-        {
-          "name": "@davidwinter/electron-forge-maker-snap",
-          "config": {
-            "applicationName": "borhan",
-            "confinement": "strict",
-            "grade": "stable",
-            "summary": "Quran text and translates",
-            "categories": [
-              "Office"
-            ]
-          }
-        }
-      ],
-      "publishers": [
-        {
-          "name": "@electron-forge/publisher-github",
-          "config": {
-            "repository": {
-              "owner": "kiamazi",
-              "name": "borhan"
-            }
-          }
-        }
-      ]
-    }
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/kiamazi/borhan/issues"
+  },
+  "keywords": [
+    "Quran",
+    "translate"
+  ],
+  "homepage": "https://github.com/kiamazi/borhan#readme",
+  "main": "src/electron.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development npm-run-all -p -r svelte:dev electron:start",
+    "beta": "cross-env NODE_ENV=production npm-run-all -p -r svelte:dev electron:start",
+    "dev": "cross-env NODE_ENV=development run-p -r svelte:dev electron:start",
+    "prod": "cross-env NODE_ENV=production run-s svelte:build electron:start",
+    "svelte:start": "sirv public --no-clear",
+    "svelte:dev": "cross-env NODE_ENV=development rollup -c -w",
+    "svelte:build": "cross-env NODE_ENV=production rollup -c",
+    "electron:start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "cross-env CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder",
+    "publish": "electron-builder --publish always"
   },
   "devDependencies": {
-    "@davidwinter/electron-forge-maker-snap": "^0.7.1",
-    "@electron-forge/cli": "^6.0.0-beta.54",
-    "@electron-forge/maker-deb": "^6.0.0-beta.54",
-    "@electron-forge/maker-dmg": "^6.0.0-beta.54",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.54",
-    "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
-    "@electron-forge/maker-zip": "^6.0.0-beta.54",
-    "@electron-forge/publisher-github": "^6.0.0-beta.54",
-    "@typescript-eslint/eslint-plugin": "^2.18.0",
-    "@typescript-eslint/parser": "^2.18.0",
-    "electron": "11.2.3",
-    "eslint": "^7.6.0",
-    "eslint-plugin-import": "^2.20.0",
-    "typescript": "^4.0.2",
-    "electron-store": "^7.0.2"
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "carbon-icons-svelte": "10.27.0",
+    "cross-env": "^7.0.3",
+    "electron": "^12.0.2",
+    "electron-builder": "^22.10.5",
+    "electron-reloader": "^1.2.0",
+    "npm-run-all": "^4.1.5",
+    "rollup": "^2.3.4",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-serve": "^1.1.0",
+    "rollup-plugin-svelte": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "sirv-cli": "^1.0.0",
+    "svelte": "^3.0.0",
+    "svelte-preprocess": "^4.7.0"
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0"
+    "electron-updater": "^4.3.8"
+  },
+  "build": {
+    "productName": "Borhan",
+    "appId": "one.kiavash.borhan",
+    "copyright": "Copyright © 2021 Kiavash Mazi",
+    "asar": true,
+    "files": [
+      "src/electron.js",
+      "public/**/**/**/*",
+      "build/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "win": {
+      "icon": "public/assets/icon/icon.ico",
+      "target": [
+        "nsis"
+      ]
+    },
+    "mac": {
+      "icon": "public/assets/icon/icon.icns",
+      "target": [
+        "dmg"
+      ],
+      "category": "productivity",
+      "type": "distribution",
+      "hardenedRuntime": "true"
+    },
+    "linux": {
+      "icon": "public/assets/icon/png",
+      "target": [
+        {
+					"target": "deb",
+					"arch": [
+						"ia32",
+						"x64"
+					]
+				},
+        "AppImage",
+        "snap",
+        "deb",
+        "rpm"
+      ],
+      "category": "Books and Reference"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "kiamazi",
+        "repo": "borhan"
+      }
+    ]
   }
 }

@@ -1,0 +1,216 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'Noon';
+  src: url('assets/fonts/Noon-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazir';
+  src: url('assets/fonts/Vazir-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sahel';
+  src: url('assets/fonts/Sahel.ttf') format('truetype');
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Anonymous pro';
+  src: url('assets/fonts/anonymous-pro.ttf') format('truetype');
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'UbuntuR';
+  src: url('assets/fonts/Ubuntu.ttf') format('truetype');
+  font-weight: normal;
+  font-display: swap;
+}
+
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box
+}
+
+button {
+  border: none;
+  cursor: pointer
+}
+
+*:focus {
+  outline: none;
+}
+
+body,
+html {
+  font-family: UbuntuR;
+  text-rendering: optimizelegibility;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+	/* background: #F7F7F7; */
+	box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: gainsboro;
+	border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #AAA;
+	border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
+select {
+	font-family: Sahel;
+	border: 0;
+  border-bottom: 1px solid;
+  padding: 2px;
+	font-size: 0.9rem;
+
+  color: inherit;
+	background-color: inherit;
+}
+
+
+.rtl {direction: rtl}
+.right {text-align: right}
+.ltr {direction: ltr}
+.left {text-align: left}
+
+a {
+  text-decoration: none;
+  color: cadetblue;
+}
+
+/* select option {background-color: #FFF;color: #d4d3d3;} */
+/* 
+input:disabled {
+	color: #ccc;
+}
+
+button {
+	color: #333;
+	background-color: #f4f4f4;
+	outline: none;
+}
+
+button:disabled {
+	color: #999;
+}
+
+button:not(:disabled):active {
+	background-color: #ddd;
+}
+
+button:focus {
+	border-color: #666;
+} */

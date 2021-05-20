@@ -12,6 +12,8 @@ Translations and interpretations are available in these languages:
 
 Amazigh, Albanian, Amharic, Arabic, Azerbaijani, Bengali, Bosnian, Bulgarian, Czech, Divehi, Dutch, English, French, German, Hausa, Hindi, Indonesian, Italian, Japanese, Korean, Kurdish, Malay, Malayalam, Norwegian, Pashto, Persian, Polish, Portuguese, Romanian, Russian, Sindhi, Somali, Spanish, Swahili, Swedish, Tajik, Tamil, Tatar, Thai, Turkish, Urdu, Uyghur, Uzbek, Chinese
 
+### Download
+
 Windows: https://github.com/kiamazi/borhan/releases/download/v1.4.4/Borhan-Setup-1.4.4.exe
 
 mac: https://github.com/kiamazi/borhan/releases/download/v1.4.4/Borhan-1.4.4.dmg

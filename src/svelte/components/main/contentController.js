@@ -8,7 +8,6 @@ export function contentController(textSelected, translateSelected, pageNumber, a
     const match = /(\w+)_\w+/.exec(translateSelected);
     const rtl = rtlLangs.includes(match[1]) ? true : false;
     let data = [];
-	let textContent;
     for (
         let ayaNumInQuran = Page[pageNumber][2];
         ayaNumInQuran < Page[pageNumber + 1][2];
@@ -17,7 +16,7 @@ export function contentController(textSelected, translateSelected, pageNumber, a
         const suraNum = text[ayaNumInQuran][1] - 1
         const ayaNumInSura = text[ayaNumInQuran][2]
         if (ayaNumInSura === 1 && suraNum !== 0 && suraNum !== 8)
-            textContent = text[ayaNumInQuran][3].replace(
+            text[ayaNumInQuran][3] = text[ayaNumInQuran][3].replace(
                 /^(([^ ]+ ){4})/u,
                 ""
             );
@@ -25,7 +24,7 @@ export function contentController(textSelected, translateSelected, pageNumber, a
             ayaNumInQuran,
             suraNum,
             ayaNumInSura,
-            text: textContent,
+            text: text[ayaNumInQuran][3],
             translate: translate[ayaNumInQuran][3],
             rtl: rtl,
             selected: ayaNumInQuran === ayaNumberInQuran ? true : false,

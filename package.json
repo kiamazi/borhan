@@ -87,12 +87,12 @@
       "icon": "public/assets/icon/png",
       "target": [
         {
-					"target": "deb",
-					"arch": [
-						"ia32",
-						"x64"
-					]
-				},
+            "target": "deb",
+            "arch": [
+                "ia32",
+                "x64"
+            ]
+        },
         "AppImage",
         "snap",
         "deb",

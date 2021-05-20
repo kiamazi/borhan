@@ -1,7 +1,7 @@
 {
   "name": "Borhan",
   "description": "Quran text and translates",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kiamazi/borhan.git"

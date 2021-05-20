@@ -95,7 +95,7 @@ import Settings from './side/settings.svelte';
     <br />
     <p>If you find a bug in the program or if you feel the need for new features in the program, feel free to add new issue in <a href="https://github.com/kiamazi/borhan/issues">github repository</a></p>
     <br />
-    <div class="version">version 1.4.0</div>
+    <div class="version">version 1.4.1</div>
 </div>
 
 <style>
